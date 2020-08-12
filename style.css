@@ -1,0 +1,50 @@
+body {
+  /*   background-color: #CB9805; */
+  margin: 0;
+}
+
+#container {
+  display: block;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  /*   background-color: #A37A00;  */
+}
+
+.team {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 50%;
+  max-width: 50%;
+  background-color: rgba(255, 0, 0, 0.5);
+  float: left;
+}
+
+.team.blue {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.box {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+#info {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  color: #aaa;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-family: Arial;
+  font-weight: bold;
+}
