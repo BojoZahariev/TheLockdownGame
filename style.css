@@ -22,6 +22,10 @@ body {
   background-color: aquamarine;
 }
 
+.boost {
+  background-color: bisque;
+}
+
 .box {
   display: block;
   position: relative;

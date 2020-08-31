@@ -14,6 +14,7 @@ function changeFrame(step, move) {
     Array.from(frames)[Array.from(frames).indexOf(box.parentElement) - step].appendChild(box);
   }
 
+  //get the value of the frame
   let trapValue = Array.from(frames)[Array.from(frames).indexOf(box.parentElement)].getAttribute('value');
 
   TweenMax.set(box, { x: 0, y: 0 });
@@ -28,7 +29,7 @@ function changeFrame(step, move) {
   });
 
   setTimeout(function() {
-    framesControl(Number(trapValue));
+    framesControl(Number(trapValue), box.parentElement);
   }, 5000);
 }
 
@@ -45,11 +46,13 @@ const rollDice = () => {
   return 1 + Math.floor(Math.random() * 6);
 };
 
-framesControl = boxValue => {
+framesControl = (boxValue, frame) => {
   console.log(boxValue);
   if (boxValue === 0) {
     moved = true;
-  } else {
+  } else if (frame.classList.contains('trap')) {
     changeFrame(boxValue, 'back');
+  } else if (frame.classList.contains('boost')) {
+    changeFrame(boxValue, 'forward');
   }
 };
