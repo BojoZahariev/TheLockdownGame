@@ -1,16 +1,20 @@
 var frames = document.querySelectorAll('.frame');
 var box = document.querySelector('.box');
 var dice = document.querySelector('#dice');
+moved = true;
 
-function changeFrame(diceRoll) {
-  console.log(diceRoll);
+function changeFrame(step, move) {
+  //console.log(step);
   let rect = box.getBoundingClientRect();
 
   //move the player
-  Array.from(frames)[Array.from(frames).indexOf(box.parentElement) + diceRoll].appendChild(box);
+  if (move === 'forward') {
+    Array.from(frames)[Array.from(frames).indexOf(box.parentElement) + step].appendChild(box);
+  } else {
+    Array.from(frames)[Array.from(frames).indexOf(box.parentElement) - step].appendChild(box);
+  }
 
   let trapValue = Array.from(frames)[Array.from(frames).indexOf(box.parentElement)].getAttribute('value');
-  console.log(trapValue);
 
   TweenMax.set(box, { x: 0, y: 0 });
 
@@ -22,14 +26,30 @@ function changeFrame(diceRoll) {
     y: rect.top - newRect.top,
     ease: Power1.easeInOut
   });
+
+  setTimeout(function() {
+    framesControl(Number(trapValue));
+  }, 5000);
 }
 
 dice.addEventListener('click', () => {
-  changeFrame(rollDice());
+  if (moved) {
+    moved = false;
+    changeFrame(rollDice(), 'forward');
+  }
 });
 
 //DICE
 
-function rollDice() {
+const rollDice = () => {
   return 1 + Math.floor(Math.random() * 6);
-}
+};
+
+framesControl = boxValue => {
+  console.log(boxValue);
+  if (boxValue === 0) {
+    moved = true;
+  } else {
+    changeFrame(boxValue, 'back');
+  }
+};
