@@ -1,13 +1,16 @@
-var teamBlue = document.querySelectorAll('.frame');
+var frames = document.querySelectorAll('.frame');
 var box = document.querySelector('.box');
 var dice = document.querySelector('#dice');
 
-Array.from(teamBlue).forEach(element => element.addEventListener('click', changeFrame));
+function changeFrame(diceRoll) {
+  console.log(diceRoll);
+  let rect = box.getBoundingClientRect();
 
-function changeFrame(position) {
-  console.log(position);
-  var rect = box.getBoundingClientRect();
-  Array.from(teamBlue)[Array.from(teamBlue).indexOf(box.parentElement) + position].appendChild(box);
+  //move the player
+  Array.from(frames)[Array.from(frames).indexOf(box.parentElement) + diceRoll].appendChild(box);
+
+  let trapValue = Array.from(frames)[Array.from(frames).indexOf(box.parentElement)].getAttribute('value');
+  console.log(trapValue);
 
   TweenMax.set(box, { x: 0, y: 0 });
 
@@ -22,7 +25,6 @@ function changeFrame(position) {
 }
 
 dice.addEventListener('click', () => {
-  //console.log(Array.from(teamBlue).indexOf(box.parentElement));
   changeFrame(rollDice());
 });
 

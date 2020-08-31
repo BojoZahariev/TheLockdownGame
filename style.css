@@ -6,6 +6,7 @@ body {
 
 #container {
   display: flex;
+  flex-flow: wrap;
   position: relative;
 }
 
@@ -15,6 +16,10 @@ body {
   width: 100px;
   height: 100px;
   border: 1px solid #222;
+}
+
+.trap {
+  background-color: aquamarine;
 }
 
 .box {
