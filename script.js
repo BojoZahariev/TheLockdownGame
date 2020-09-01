@@ -30,6 +30,18 @@ function changeFrame(step, move) {
 
   setTimeout(function() {
     framesControl(Number(trapValue), box.parentElement);
+
+    box.scrollIntoView({
+      behavior: 'smooth'
+    });
+
+    /*
+    window.scrollBy({
+      top: 300, // could be negative value
+      left: 0,
+      behavior: 'smooth'
+    });
+    */
   }, 4000);
 }
 

@@ -12,7 +12,6 @@ body {
 
 #containerFrames {
   display: flex;
-
   flex-direction: column;
   position: relative;
   width: 50%;
@@ -42,6 +41,8 @@ body {
 }
 
 #dice {
+  position: fixed;
+  right: 100px;
   margin: 100px;
   height: 100px;
   width: 100px;
