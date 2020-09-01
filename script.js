@@ -30,9 +30,10 @@ function changeFrame(step, move) {
 
   setTimeout(function() {
     framesControl(Number(trapValue), box.parentElement);
-  }, 5000);
+  }, 4000);
 }
 
+//Dice button
 dice.addEventListener('click', () => {
   if (moved) {
     moved = false;
@@ -41,7 +42,6 @@ dice.addEventListener('click', () => {
 });
 
 //DICE
-
 const rollDice = () => {
   return 1 + Math.floor(Math.random() * 6);
 };
