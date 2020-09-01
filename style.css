@@ -4,17 +4,26 @@ body {
   box-sizing: border-box;
 }
 
-#container {
+#main {
   display: flex;
-  flex-flow: wrap;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#containerFrames {
+  display: flex;
+
+  flex-direction: column;
   position: relative;
+  width: 50%;
+  margin: 100px;
 }
 
 .frame {
   display: block;
   position: relative;
   width: 100px;
-  height: 100px;
+  min-height: 100px;
   border: 1px solid #222;
 }
 
@@ -27,13 +36,13 @@ body {
 }
 
 .box {
-  display: block;
-  position: relative;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-color: red;
 }
 
 #dice {
   margin: 100px;
+  height: 100px;
+  width: 100px;
 }
