@@ -24,7 +24,6 @@ body {
   width: 100px;
   min-height: 100px;
   border: 1px solid #222;
-  padding: 20px;
 }
 
 .trap {
@@ -39,6 +38,7 @@ body {
   width: 50px;
   height: 50px;
   padding: 20px;
+  z-index: 99;
 }
 
 #dice {
@@ -47,4 +47,17 @@ body {
   margin: 100px;
   height: 100px;
   width: 100px;
+}
+
+#cardDiv {
+  position: fixed;
+  top: 200px;
+  right: 200px;
+  margin: 20px;
+  height: 200px;
+  display: none;
+}
+
+#confirm {
+  margin: 20px;
 }
