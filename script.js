@@ -31,7 +31,7 @@ function changeFrame(step, move) {
   setTimeout(function() {
     framesControl(Number(trapValue), box.parentElement);
 
-    box.scrollIntoView({
+    Array.from(frames)[Array.from(frames).indexOf(box.parentElement)].scrollIntoView({
       behavior: 'smooth'
     });
 
