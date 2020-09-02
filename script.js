@@ -1,9 +1,9 @@
-var frames = document.querySelectorAll('.frame');
-var box = document.querySelector('.box');
-var dice = document.querySelector('#dice');
+const frames = document.querySelectorAll('.frame');
+const box = document.querySelector('.box');
+const dice = document.querySelector('#dice');
 moved = true;
 
-function changeFrame(step, move) {
+const changeFrame = (step, move) => {
   //console.log(step);
   let rect = box.getBoundingClientRect();
 
@@ -19,7 +19,7 @@ function changeFrame(step, move) {
 
   TweenMax.set(box, { x: 0, y: 0 });
 
-  var newRect = box.getBoundingClientRect();
+  let newRect = box.getBoundingClientRect();
 
   //animation speed and ease
   TweenMax.from(box, 4, {
@@ -34,16 +34,8 @@ function changeFrame(step, move) {
     Array.from(frames)[Array.from(frames).indexOf(box.parentElement)].scrollIntoView({
       behavior: 'smooth'
     });
-
-    /*
-    window.scrollBy({
-      top: 300, // could be negative value
-      left: 0,
-      behavior: 'smooth'
-    });
-    */
   }, 4000);
-}
+};
 
 //Dice button
 dice.addEventListener('click', () => {
