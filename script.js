@@ -7,12 +7,12 @@ moved = true;
 const changeFrame = (step, move) => {
   let framesArray = Array.from(frames);
   let rect = box.getBoundingClientRect();
-
+  console.log(move);
   //move the player
   if (move === 'forward') {
     framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
     console.log(`forward ${framesArray[framesArray.indexOf(box.parentElement)].textContent}`);
-  } else {
+  } else if (move === 'back') {
     framesArray[framesArray.indexOf(box.parentElement) - step].appendChild(box);
     console.log(`back ${framesArray[framesArray.indexOf(box.parentElement)].textContent}`);
   }
@@ -54,11 +54,14 @@ const rollDice = () => {
 };
 
 framesControl = (boxValue, frame) => {
+  console.log(frame.classList);
   if (boxValue === 0) {
     moved = true;
   } else if (frame.classList.contains('trap')) {
     trapFrame(boxValue, 'back');
   } else if (frame.classList.contains('boost')) {
+    console.log('ding');
+
     trapFrame(boxValue, 'forward');
   }
 };
@@ -67,6 +70,7 @@ const trapFrame = (stepValue, direction) => {
   cardDiv.style.display = 'block';
 
   document.querySelector('#confirm').addEventListener('click', () => {
+    console.log(stepValue, direction);
     changeFrame(stepValue, direction);
     cardDiv.style.display = 'none';
   });
