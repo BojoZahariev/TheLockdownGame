@@ -5,18 +5,20 @@ const cardDiv = document.querySelector('#cardDiv');
 moved = true;
 
 const changeFrame = (step, move) => {
-  //console.log(step);
+  let framesArray = Array.from(frames);
   let rect = box.getBoundingClientRect();
 
   //move the player
   if (move === 'forward') {
-    Array.from(frames)[Array.from(frames).indexOf(box.parentElement) + step].appendChild(box);
+    framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
+    console.log(`forward ${framesArray[framesArray.indexOf(box.parentElement)].textContent}`);
   } else {
-    Array.from(frames)[Array.from(frames).indexOf(box.parentElement) - step].appendChild(box);
+    framesArray[framesArray.indexOf(box.parentElement) - step].appendChild(box);
+    console.log(`back ${framesArray[framesArray.indexOf(box.parentElement)].textContent}`);
   }
 
   //get the value of the frame
-  let trapValue = Array.from(frames)[Array.from(frames).indexOf(box.parentElement)].getAttribute('value');
+  let trapValue = framesArray[framesArray.indexOf(box.parentElement)].getAttribute('value');
 
   TweenMax.set(box, { x: 0, y: 0 });
 
@@ -31,8 +33,8 @@ const changeFrame = (step, move) => {
 
   setTimeout(function() {
     framesControl(Number(trapValue), box.parentElement);
-    console.log(Array.from(frames)[Array.from(frames).indexOf(box.parentElement)].textContent);
-    Array.from(frames)[Array.from(frames).indexOf(box.parentElement)].scrollIntoView({
+    console.log(framesArray[framesArray.indexOf(box.parentElement)].textContent);
+    framesArray[framesArray.indexOf(box.parentElement)].scrollIntoView({
       behavior: 'smooth'
     });
   }, 4000);
@@ -56,18 +58,16 @@ framesControl = (boxValue, frame) => {
     moved = true;
   } else if (frame.classList.contains('trap')) {
     trapFrame(boxValue, 'back');
-    //changeFrame(boxValue, 'back');
   } else if (frame.classList.contains('boost')) {
     trapFrame(boxValue, 'forward');
-    //changeFrame(boxValue, 'forward');
   }
 };
 
-const trapFrame = (boxValue, direction) => {
+const trapFrame = (stepValue, direction) => {
   cardDiv.style.display = 'block';
 
   document.querySelector('#confirm').addEventListener('click', () => {
-    changeFrame(boxValue, direction);
+    changeFrame(stepValue, direction);
     cardDiv.style.display = 'none';
   });
 };
