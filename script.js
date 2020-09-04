@@ -31,20 +31,26 @@ const changeFrame = (step, move) => {
     ease: Power1.easeInOut
   });
 
-  setTimeout(function() {
-    framesControl(Number(trapValue), box.parentElement);
+  let forwardTime = 4000;
+  let backTime = 500;
+  setTimeout(
+    function() {
+      framesControl(Number(trapValue), box.parentElement);
 
-    framesArray[framesArray.indexOf(box.parentElement)].scrollIntoView({
-      behavior: 'smooth'
-    });
-  }, 4000);
+      framesArray[framesArray.indexOf(box.parentElement)].scrollIntoView({
+        behavior: 'smooth'
+      });
+    },
+    direction === 'forward' ? forwardTime : backTime
+  );
 };
 
 //Dice button
 dice.addEventListener('click', () => {
   if (moved) {
     moved = false;
-    changeFrame(rollDice(), 'forward');
+    direction = 'forward';
+    changeFrame(rollDice(), direction);
   }
 });
 
