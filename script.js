@@ -66,16 +66,20 @@ framesControl = (boxValue, frame) => {
   valueStep = boxValue;
 
   if (boxValue === 0) {
+    dice.style.display = 'block';
     moved = true;
   } else if (frame.classList.contains('trap')) {
     cardDiv.style.display = 'block';
+    dice.style.display = 'none';
     direction = 'back';
   } else if (frame.classList.contains('boost')) {
     cardDiv.style.display = 'block';
+    dice.style.display = 'none';
     direction = 'forward';
   }
 };
 
+//Confirm Button for the trap or boost card
 document.querySelector('#confirm').addEventListener('click', () => {
   changeFrame(valueStep, direction);
   cardDiv.style.display = 'none';
