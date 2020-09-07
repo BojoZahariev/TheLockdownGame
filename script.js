@@ -49,15 +49,6 @@ const changeFrame = (step, move) => {
   );
 };
 
-//Dice button
-dice.addEventListener('click', () => {
-  if (moved) {
-    moved = false;
-    direction = 'forward';
-    changeFrame(rollDice(), direction);
-  }
-});
-
 //DICE
 /*
 const rollDice = () => {
@@ -86,6 +77,15 @@ framesControl = (boxValue, frame) => {
 document.querySelector('#confirm').addEventListener('click', () => {
   changeFrame(valueStep, direction);
   cardDiv.style.display = 'none';
+});
+
+//Dice button
+dice.addEventListener('click', () => {
+  if (moved) {
+    moved = false;
+    direction = 'forward';
+    changeFrame(rollDice(), direction);
+  }
 });
 
 const addDots = (element, number) => {
