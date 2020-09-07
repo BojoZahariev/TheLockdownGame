@@ -94,7 +94,7 @@ body {
 .dice-face {
   height: 90%;
   width: 90%;
-  border-radius: 10px;
+  border-radius: 20px;
   background: #cee3da;
   -webkit-box-shadow: 8px 8px 16px #a9bab3, -8px -8px 16px #f3ffff;
   box-shadow: 8px 8px 16px #a9bab3, -8px -8px 16px #f3ffff;
