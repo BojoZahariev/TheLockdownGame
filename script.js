@@ -146,7 +146,7 @@ const rollDice = () => {
     dice.className = 'dice-face';
     if (dice.childNodes && dice.childNodes[0]) dice.childNodes[0].remove();
     generateDice(value);
-  }, 500);
+  }, 300);
 
   return value;
 };
