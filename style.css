@@ -65,11 +65,12 @@ body {
 .dice-wrapper {
   height: 100%;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
-  -webkit-box-shadow: -7px 10px 12px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -7px 10px 12px 0px rgba(0, 0, 0, 0.75);
-  margin: 0.5rem;
+
+  -webkit-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
 }
 
 .dice {
@@ -91,9 +92,9 @@ body {
 }
 
 .dice-face {
-  height: 97%;
-  width: 97%;
-  border-radius: 65px;
+  height: 90%;
+  width: 90%;
+  border-radius: 10px;
   background: #cee3da;
   -webkit-box-shadow: 8px 8px 16px #a9bab3, -8px -8px 16px #f3ffff;
   box-shadow: 8px 8px 16px #a9bab3, -8px -8px 16px #f3ffff;
