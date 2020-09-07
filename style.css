@@ -76,8 +76,7 @@ body {
 .dice {
   height: 100%;
   width: 100%;
-  background: -o-linear-gradient(305deg, #dcf3e9, #b9ccc4);
-  background: linear-gradient(145deg, #dcf3e9, #b9ccc4);
+  background: #9dd9d2;
   -webkit-box-shadow: 8px 8px 16px #a9bab3, -8px -8px 16px #f3ffff;
   box-shadow: 8px 8px 16px #a9bab3, -8px -8px 16px #f3ffff;
   display: -webkit-box;
@@ -95,7 +94,7 @@ body {
   height: 90%;
   width: 90%;
   border-radius: 20px;
-  background: #cee3da;
+  background: #9dd9d2;
   -webkit-box-shadow: 8px 8px 16px #a9bab3, -8px -8px 16px #f3ffff;
   box-shadow: 8px 8px 16px #a9bab3, -8px -8px 16px #f3ffff;
   display: -webkit-box;
@@ -128,9 +127,7 @@ body {
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  background: #cee3da;
-  -webkit-box-shadow: inset 8px 8px 16px #357e83, inset -8px -8px 16px #f3ffff;
-  box-shadow: inset 8px 8px 16px #357e83, inset -8px -8px 16px #f3ffff;
+  background: #392f5a;
 }
 
 .dot-column {
