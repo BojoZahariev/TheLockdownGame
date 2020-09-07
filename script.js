@@ -31,8 +31,11 @@ const changeFrame = (step, move) => {
     ease: Power1.easeInOut
   });
 
+  //longer waiting time for forward, shorter for backwards
   let forwardTime = 4000;
   let backTime = 500;
+
+  //scroll the parent frame in focus after certain time
   setTimeout(
     function() {
       framesControl(Number(trapValue), box.parentElement);
