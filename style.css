@@ -109,8 +109,8 @@
 }
 
 .dot-wrapper {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 3rem;
+  width: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,8 +120,8 @@
 }
 
 .dot {
-  width: 11px;
-  height: 11px;
+  width: 14px;
+  height: 14px;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   border-radius: 50%;
