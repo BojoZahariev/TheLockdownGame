@@ -88,7 +88,6 @@ dice.addEventListener('click', () => {
   }
 });
 
-/*
 const addDots = (element, number) => {
   for (let i = 0; i < number; i++) {
     const dot = document.createElement('div');
@@ -153,30 +152,3 @@ const rollDice = () => {
 };
 
 rollDice();
-
-*/
-function rollDice() {
-  const dice = [...document.querySelectorAll('.die-list')];
-
-  let n;
-  dice.forEach(die => {
-    toggleClasses(die);
-    n = getRandomNumber(1, 6);
-    die.dataset.roll = n;
-  });
-
-  return n;
-}
-
-function toggleClasses(die) {
-  die.classList.toggle('odd-roll');
-  die.classList.toggle('even-roll');
-}
-
-function getRandomNumber(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-//document.getElementById("roll-button").addEventListener("click", rollDice);
