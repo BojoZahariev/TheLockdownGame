@@ -2,7 +2,6 @@ const frames = document.querySelectorAll('.frame');
 const box = document.querySelector('.box');
 const diceDiv = document.querySelector('#diceDiv');
 const diceButton = document.querySelector('#diceButton');
-let moved = true;
 
 //Global variables so it's not messing the event listener for the confirm button
 let valueStep;
@@ -24,6 +23,9 @@ const changeFrame = (step, move) => {
   } else {
     framesArray[framesArray.indexOf(box.parentElement) - step].appendChild(box);
   }
+
+  //hide the button until the next roll
+  diceButton.style.display = 'none';
 
   //get the value of the frame
   let trapValue = framesArray[framesArray.indexOf(box.parentElement)].getAttribute('value');
@@ -51,6 +53,9 @@ const changeFrame = (step, move) => {
       framesArray[framesArray.indexOf(box.parentElement)].scrollIntoView({
         behavior: 'smooth'
       });
+
+      //reveal the roll button
+      diceButton.style.display = 'block';
     },
     direction === 'forward' ? forwardTime : backTime
   );
@@ -61,7 +66,6 @@ framesControl = (boxValue, frame) => {
 
   if (boxValue === 0) {
     diceDiv.style.display = 'block';
-    moved = true;
   } else if (frame.classList.contains('trap')) {
     cardDiv.style.display = 'block';
     diceDiv.style.display = 'none';
@@ -81,11 +85,8 @@ document.querySelector('#confirm').addEventListener('click', () => {
 
 //Dice button
 diceButton.addEventListener('click', () => {
-  if (moved) {
-    moved = false;
-    direction = 'forward';
-    changeFrame(rollDice(), direction);
-  }
+  direction = 'forward';
+  changeFrame(rollDice(), direction);
 });
 
 const addDots = (element, number) => {
