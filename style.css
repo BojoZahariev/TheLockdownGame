@@ -7,15 +7,13 @@
 #main {
   overflow: hidden;
   height: 100vh;
-  display: flex;
-  margin: auto;
   position: relative;
 }
 
 #leftText {
   position: fixed;
   top: 200px;
-  left: 10%;
+  left: calc(100vw / 2 - 400px);
   width: 200px;
   text-align: center;
 }
@@ -34,7 +32,7 @@
 .frame {
   display: block;
   position: relative;
-  width: 150px;
+  width: 100%;
   min-height: 150px;
   border: 1px solid #222;
 }
@@ -72,8 +70,8 @@
 #diceDiv {
   position: fixed;
   top: 200px;
-  right: 10%;
-
+  right: calc(100vw / 2 - 400px);
+  width: 200px;
   text-align: center;
 }
 
@@ -208,15 +206,21 @@
 /*MEDIA*/
 
 @media only screen and (max-width: 768px) {
-  #main {
-    width: 100%;
+  #leftText {
+    left: 0;
+    width: 200px;
   }
 
   #containerFrames {
-    position: relative;
-    left: 0;
+    width: 100px;
+  }
+
+  .frame {
+    min-height: 100px;
+  }
+
+  #diceDiv {
     right: 0;
-    top: 100px;
-    margin: 10px;
+    width: 200px;
   }
 }
