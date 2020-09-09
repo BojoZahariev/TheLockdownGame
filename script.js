@@ -15,7 +15,12 @@ const changeFrame = (step, move) => {
 
   //move the player
   if (move === 'forward') {
-    framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
+    //move to the final div if the roll is more than the length
+    if (!framesArray[framesArray.indexOf(box.parentElement) + step]) {
+      framesArray[framesArray.length - 1].appendChild(box);
+    } else {
+      framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
+    }
   } else {
     framesArray[framesArray.indexOf(box.parentElement) - step].appendChild(box);
   }
