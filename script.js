@@ -1,12 +1,14 @@
 const frames = document.querySelectorAll('.frame');
 const box = document.querySelector('.box');
 const diceDiv = document.querySelector('#diceDiv');
-const dice = document.querySelector('#diceButton');
+const diceButton = document.querySelector('#diceButton');
 let moved = true;
 
+//Global variables so it's not messing the event listener for the confirm button
 let valueStep;
 let direction;
 
+//move the player to a new div and scroll the div into view
 const changeFrame = (step, move) => {
   let rect = box.getBoundingClientRect();
   let framesArray = Array.from(frames);
@@ -49,13 +51,6 @@ const changeFrame = (step, move) => {
   );
 };
 
-//DICE
-/*
-const rollDice = () => {
-  return 1 + Math.floor(Math.random() * 6);
-};
-*/
-
 framesControl = (boxValue, frame) => {
   valueStep = boxValue;
 
@@ -80,7 +75,7 @@ document.querySelector('#confirm').addEventListener('click', () => {
 });
 
 //Dice button
-dice.addEventListener('click', () => {
+diceButton.addEventListener('click', () => {
   if (moved) {
     moved = false;
     direction = 'forward';
