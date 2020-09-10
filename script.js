@@ -1,7 +1,10 @@
 const frames = document.querySelectorAll('.frame');
+const cardTexts = document.querySelectorAll('.cardText');
 const box = document.querySelector('.box');
 const diceDiv = document.querySelector('#diceDiv');
 const diceButton = document.querySelector('#diceButton');
+const leftText = document.querySelector('#leftText');
+const confirmDiv = document.querySelector('#confirmDiv');
 
 //Global variables so it's not messing the event listener for the confirm button
 let valueStep;
@@ -61,26 +64,32 @@ const changeFrame = (step, move) => {
   );
 };
 
-framesControl = (boxValue, frame) => {
+const framesControl = (boxValue, frame) => {
   valueStep = boxValue;
 
   if (boxValue === 0) {
     diceDiv.style.display = 'block';
   } else if (frame.classList.contains('trap')) {
-    cardDiv.style.display = 'block';
+    confirmDiv.style.display = 'block';
     diceDiv.style.display = 'none';
     direction = 'back';
   } else if (frame.classList.contains('boost')) {
-    cardDiv.style.display = 'block';
+    confirmDiv.style.display = 'block';
     diceDiv.style.display = 'none';
     direction = 'forward';
+    leftTextContent(frame);
   }
+};
+
+const leftTextContent = frame => {
+  let cardsTextArray = Array.from(cardTexts);
+  cardsTextArray[frame.id - 1].style.display = 'block';
 };
 
 //Confirm Button for the trap or boost card
 document.querySelector('#confirm').addEventListener('click', () => {
   changeFrame(valueStep, direction);
-  cardDiv.style.display = 'none';
+  confirmDiv.style.display = 'none';
 });
 
 //Dice button

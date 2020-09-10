@@ -11,11 +11,16 @@
 }
 
 #leftText {
+  padding: 10px;
   position: fixed;
   top: 200px;
   left: calc(100vw / 2 - 400px);
   width: 200px;
   text-align: center;
+}
+
+.cardText {
+  display: none;
 }
 
 #containerFrames {
@@ -52,7 +57,7 @@
   z-index: 99;
 }
 
-#cardDiv {
+#confirmDiv {
   position: fixed;
   top: 200px;
   right: calc(100vw / 2 - 400px);
