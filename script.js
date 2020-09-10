@@ -20,7 +20,9 @@ const changeFrame = (step, move) => {
     //move to the final div if the roll is more than the length
     if (!framesArray[framesArray.indexOf(box.parentElement) + step]) {
       framesArray[framesArray.length - 1].appendChild(box);
-      leftTextContent(4);
+      //load the final text
+      let cardsTextArray = Array.from(cardTexts);
+      leftTextContent(cardsTextArray.indexOf(cardsTextArray[cardsTextArray.length - 1]));
     } else {
       framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
     }
@@ -71,12 +73,12 @@ const framesControl = (boxValue, frame) => {
     confirm.style.display = 'block';
     diceButton.style.display = 'none';
     direction = 'back';
-    leftTextContent(frame.id);
+    leftTextContent(Number(frame.id));
   } else if (frame.classList.contains('boost')) {
     confirm.style.display = 'block';
     diceButton.style.display = 'none';
     direction = 'forward';
-    leftTextContent(frame.id);
+    leftTextContent(Number(frame.id));
   }
 };
 
@@ -84,7 +86,7 @@ const leftTextContent = index => {
   let cardsTextArray = Array.from(cardTexts);
   //clear the old text
   cardsTextArray.forEach(el => (el.style.display = 'none'));
-
+  console.log(index);
   //display the new content
   cardsTextArray[index].style.display = 'block';
 };
