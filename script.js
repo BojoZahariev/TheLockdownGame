@@ -20,6 +20,7 @@ const changeFrame = (step, move) => {
     //move to the final div if the roll is more than the length
     if (!framesArray[framesArray.indexOf(box.parentElement) + step]) {
       framesArray[framesArray.length - 1].appendChild(box);
+      leftTextContent(4);
     } else {
       framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
     }
