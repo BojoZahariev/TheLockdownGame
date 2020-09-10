@@ -4,7 +4,7 @@ const box = document.querySelector('.box');
 const diceDiv = document.querySelector('#diceDiv');
 const diceButton = document.querySelector('#diceButton');
 const leftText = document.querySelector('#leftText');
-const confirmDiv = document.querySelector('#confirmDiv');
+const confirm = document.querySelector('#confirm');
 
 //Global variables so it's not messing the event listener for the confirm button
 let valueStep;
@@ -58,7 +58,7 @@ const changeFrame = (step, move) => {
       });
 
       //reveal the roll button
-      diceButton.style.display = 'block';
+      //diceButton.style.display = 'block';
     },
     direction === 'forward' ? forwardTime : backTime
   );
@@ -68,28 +68,33 @@ const framesControl = (boxValue, frame) => {
   valueStep = boxValue;
 
   if (boxValue === 0) {
-    diceDiv.style.display = 'block';
+    diceButton.style.display = 'block';
   } else if (frame.classList.contains('trap')) {
-    confirmDiv.style.display = 'block';
-    diceDiv.style.display = 'none';
+    confirm.style.display = 'block';
+    diceButton.style.display = 'none';
     direction = 'back';
   } else if (frame.classList.contains('boost')) {
-    confirmDiv.style.display = 'block';
-    diceDiv.style.display = 'none';
+    confirm.style.display = 'block';
+    diceButton.style.display = 'none';
     direction = 'forward';
-    leftTextContent(frame);
+    leftTextContent(frame.id);
   }
 };
 
-const leftTextContent = frame => {
+const leftTextContent = index => {
   let cardsTextArray = Array.from(cardTexts);
-  cardsTextArray[frame.id - 1].style.display = 'block';
+  //clear the old text
+  cardsTextArray.forEach(el => (el.style.display = 'none'));
+
+  //display the new content
+  cardsTextArray[index].style.display = 'block';
 };
 
 //Confirm Button for the trap or boost card
-document.querySelector('#confirm').addEventListener('click', () => {
+confirm.addEventListener('click', () => {
   changeFrame(valueStep, direction);
-  confirmDiv.style.display = 'none';
+  confirm.style.display = 'none';
+  leftTextContent(0);
 });
 
 //Dice button
