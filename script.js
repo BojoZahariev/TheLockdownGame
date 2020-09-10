@@ -56,9 +56,6 @@ const changeFrame = (step, move) => {
       framesArray[framesArray.indexOf(box.parentElement)].scrollIntoView({
         behavior: 'smooth'
       });
-
-      //reveal the roll button
-      //diceButton.style.display = 'block';
     },
     direction === 'forward' ? forwardTime : backTime
   );
@@ -73,6 +70,7 @@ const framesControl = (boxValue, frame) => {
     confirm.style.display = 'block';
     diceButton.style.display = 'none';
     direction = 'back';
+    leftTextContent(frame.id);
   } else if (frame.classList.contains('boost')) {
     confirm.style.display = 'block';
     diceButton.style.display = 'none';
