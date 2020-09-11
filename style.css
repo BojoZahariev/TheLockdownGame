@@ -44,7 +44,9 @@
 }
 
 .frame {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   margin-top: 10px;
   scroll-margin: 10px;
@@ -63,10 +65,16 @@
   background-color: bisque;
 }
 
+.frameNumbers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+}
+
 .box {
-  width: 50px;
-  height: 50px;
-  padding: 20px;
+  width: 100px;
+
   z-index: 99;
 }
 
