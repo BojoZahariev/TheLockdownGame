@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,6 +10,7 @@
   overflow: hidden;
   height: 100vh;
   position: relative;
+  background-color: #f4fec1;
 }
 
 .title {
@@ -55,15 +58,16 @@
   padding: 5px;
   width: 100%;
   min-height: 150px;
-  border: 1px solid #222;
+  border: 3px solid #2660a4;
+  background-color: #bce7fd;
 }
 
 .trap {
-  background-color: aquamarine;
+  background-color: #d81159;
 }
 
 .boost {
-  background-color: bisque;
+  background-color: #a1ef8b;
 }
 
 .frameNumbers {
@@ -77,11 +81,6 @@
   width: 100px;
   z-index: 999;
   filter: drop-shadow(1px 5px 6px #222);
-}
-
-#confirm {
-  display: none;
-  margin: 20px auto;
 }
 
 /*DICE*/
@@ -216,10 +215,28 @@
   transform-style: preserve-3d;
 }
 
-#diceButton {
+#diceButton,
+#confirm {
   display: block;
+  width: 100px;
+  padding: 10px 30px;
   cursor: pointer;
   margin: 10px auto;
+  border: 2px solid #d81159;
+  color: #fff;
+  background-size: 200% auto;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-image: linear-gradient(to right, #124e78 0%, #78b9e7 50%, #124e78 100%);
+  transition: 0.5s;
+}
+
+#confirm {
+  display: none;
+}
+
+#diceButton:hover,
+#confirm:hover {
+  background-position: right center;
 }
 
 /*MEDIA*/
