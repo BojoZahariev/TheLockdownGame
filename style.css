@@ -13,12 +13,13 @@
 .title {
   padding: 10px;
   text-align: center;
+  margin: 100px;
 }
 
 #leftText {
   padding: 10px;
   position: fixed;
-  top: 200px;
+  top: calc(100vh / 2 - 100px);
   left: calc(100vw / 2 - 400px);
   width: 200px;
   text-align: center;
@@ -39,7 +40,7 @@
   position: relative;
   left: 0;
   right: 0;
-  top: 100px;
+
   margin: auto;
 }
 
@@ -87,7 +88,7 @@
 
 #diceDiv {
   position: fixed;
-  top: 200px;
+  top: calc(100vh / 2 - 100px);
   right: calc(100vw / 2 - 400px);
   width: 200px;
   text-align: center;
