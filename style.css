@@ -74,8 +74,8 @@
 
 .box {
   width: 100px;
-
-  z-index: 99;
+  z-index: 999;
+  filter: drop-shadow(1px 5px 6px #222);
 }
 
 #confirm {
