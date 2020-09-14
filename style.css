@@ -228,12 +228,19 @@
   padding: 10px 30px;
   cursor: pointer;
   margin: 10px auto;
-  border: 2px solid #d81159;
+  border: 2px solid #2660a4;
+  border-radius: 20px;
   color: #fff;
+
+  background-color: #d81159;
+
+  transition: all 0.5s;
+  /*
   background-size: 200% auto;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px #32325d1c, 0 1px 3px #00000014;
   background-image: linear-gradient(to right, #124e78 0%, #78b9e7 50%, #124e78 100%);
   transition: 0.5s;
+  */
 }
 
 #confirm {
@@ -242,7 +249,7 @@
 
 #diceButton:hover,
 #confirm:hover {
-  background-position: right center;
+  padding: 10px 35px;
 }
 
 /*MEDIA*/
