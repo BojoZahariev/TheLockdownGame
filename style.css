@@ -30,6 +30,7 @@
   left: calc(100vw / 2 - 400px);
   width: 200px;
   text-align: center;
+  font-family: 'Grandstander', cursive;
 }
 
 .cardText {
@@ -64,6 +65,7 @@
   min-height: 150px;
   border: 3px solid #2660a4;
   background-color: #bce7fd;
+  font-family: 'Grandstander', cursive;
 }
 
 .trap {
