@@ -240,11 +240,15 @@
 
 #confirm {
   display: none;
+  width: 130px;
 }
 
-#diceButton:hover,
-#confirm:hover {
+#diceButton:hover {
   width: 110px;
+}
+
+#confirm:hover {
+  width: 140px;
 }
 
 /*MEDIA*/
