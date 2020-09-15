@@ -41,6 +41,14 @@
   align-items: center;
 }
 
+.good {
+  background-color: #a1ef8b;
+}
+
+.bad {
+  background-color: #d81159;
+}
+
 #initialText {
   display: flex;
   text-align: center;

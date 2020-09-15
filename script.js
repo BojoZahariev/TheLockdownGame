@@ -86,7 +86,7 @@ const leftTextContent = index => {
   let cardsTextArray = Array.from(cardTexts);
   //clear the old text
   cardsTextArray.forEach(el => (el.style.display = 'none'));
-  console.log(index);
+
   //display the new content
   cardsTextArray[index].style.display = 'flex';
 };
