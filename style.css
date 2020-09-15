@@ -28,7 +28,6 @@
   top: calc(100vh / 2 - 100px);
   left: calc(100vw / 2 - 400px);
   width: 200px;
-
   text-align: center;
   font-family: 'Grandstander', cursive;
 }
@@ -37,12 +36,14 @@
   display: none;
   padding: 20px;
   border: 2px solid #d81159;
-  font-size: 18px;
+  font-size: 20px;
   min-height: 200px;
+  align-items: center;
 }
 
 #initialText {
-  display: block;
+  display: flex;
+  text-align: center;
 }
 
 #containerFrames {
