@@ -24,7 +24,6 @@
 }
 
 #leftText {
-  padding: 10px;
   position: fixed;
   top: calc(100vh / 2 - 100px);
   left: calc(100vw / 2 - 400px);
@@ -35,6 +34,9 @@
 
 .cardText {
   display: none;
+  padding: 20px;
+  border: 1px solid #d81159;
+  font-size: 18px;
 }
 
 #initialText {
