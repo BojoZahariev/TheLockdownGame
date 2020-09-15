@@ -28,6 +28,7 @@
   top: calc(100vh / 2 - 100px);
   left: calc(100vw / 2 - 400px);
   width: 200px;
+
   text-align: center;
   font-family: 'Grandstander', cursive;
 }
@@ -35,8 +36,9 @@
 .cardText {
   display: none;
   padding: 20px;
-  border: 1px solid #d81159;
+  border: 2px solid #d81159;
   font-size: 18px;
+  min-height: 200px;
 }
 
 #initialText {
