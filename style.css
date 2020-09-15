@@ -35,7 +35,7 @@
 .cardText {
   display: none;
   padding: 20px;
-  border: 2px solid #d81159;
+
   font-size: 20px;
   min-height: 200px;
   align-items: center;
@@ -43,10 +43,12 @@
 
 .good {
   background-color: #a1ef8b;
+  border: 2px solid #d81159;
 }
 
 .bad {
   background-color: #d81159;
+  border: 2px solid #a1ef8b;
 }
 
 #initialText {
