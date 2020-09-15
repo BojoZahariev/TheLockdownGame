@@ -88,7 +88,7 @@ const leftTextContent = index => {
   cardsTextArray.forEach(el => (el.style.display = 'none'));
   console.log(index);
   //display the new content
-  cardsTextArray[index].style.display = 'block';
+  cardsTextArray[index].style.display = 'flex';
 };
 
 //Confirm Button for the trap or boost card
