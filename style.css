@@ -251,6 +251,11 @@
   width: 140px;
 }
 
+.icons {
+  width: 100px;
+  position: absolute;
+}
+
 /*MEDIA*/
 
 @media only screen and (max-width: 768px) {
