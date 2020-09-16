@@ -20,9 +20,11 @@ const changeFrame = (step, move) => {
     //move to the final div if the roll is more than the length
     if (!framesArray[framesArray.indexOf(box.parentElement) + step]) {
       framesArray[framesArray.length - 1].appendChild(box);
+      /*
       //load the final text
       let cardsTextArray = Array.from(cardTexts);
       leftTextContent(cardsTextArray.indexOf(cardsTextArray[cardsTextArray.length - 1]));
+      */
     } else {
       framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
     }
@@ -67,14 +69,22 @@ const changeFrame = (step, move) => {
 const framesControl = (boxValue, frame) => {
   valueStep = boxValue;
 
-  if (boxValue === 0) {
+  //check if it's the final frame
+  if (frame.classList.contains('final')) {
+    leftTextContent(99);
+    //checks if it's neutral frame
+  } else if (boxValue === 0 && !frame.classList.contains('final')) {
     diceButton.style.display = 'block';
     leftTextContent(0);
+
+    //checks if it's a trap card
   } else if (frame.classList.contains('trap')) {
     confirm.style.display = 'block';
     diceButton.style.display = 'none';
     direction = 'back';
     leftTextContent(Number(frame.id));
+
+    //checks if it's a boost card
   } else if (frame.classList.contains('boost')) {
     confirm.style.display = 'block';
     diceButton.style.display = 'none';
@@ -83,17 +93,22 @@ const framesControl = (boxValue, frame) => {
   }
 };
 
+//Card text
 const leftTextContent = index => {
   let cardsTextArray = Array.from(cardTexts);
   //clear the old text
   cardsTextArray.forEach(el => (el.style.display = 'none'));
 
-  //display the new content
-  cardsTextArray[index].style.display = 'flex';
-
   //change the card text to the text for neutral frame
   if (index === 0) {
+    cardsTextArray[index].style.display = 'flex';
     cardsTextArray[index].textContent = 'So far so good.';
+    //load the final text
+  } else if (index === 99) {
+    cardsTextArray[cardsTextArray.indexOf(cardsTextArray[cardsTextArray.length - 1])].style.display = 'flex';
+  } else {
+    //display the new content
+    cardsTextArray[index].style.display = 'flex';
   }
 };
 
