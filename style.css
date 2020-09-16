@@ -38,6 +38,7 @@
   font-size: 20px;
   min-height: 200px;
   align-items: center;
+  border-radius: 10%;
   -webkit-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
