@@ -36,7 +36,7 @@
   display: none;
   padding: 20px;
   font-size: 20px;
-  min-height: 200px;
+  min-height: 250px;
   align-items: center;
   border-radius: 10%;
   -webkit-box-shadow: 10px 10px 5px -5px rgba(0, 0, 0, 0.75);
@@ -111,7 +111,7 @@
 
 #diceDiv {
   position: fixed;
-  top: calc(100vh / 2 - 100px);
+  top: calc(100vh / 2 - 70px);
   right: calc(100vw / 2 - 400px);
   width: 200px;
   text-align: center;
