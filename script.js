@@ -69,6 +69,7 @@ const framesControl = (boxValue, frame) => {
 
   if (boxValue === 0) {
     diceButton.style.display = 'block';
+    leftTextContent(0);
   } else if (frame.classList.contains('trap')) {
     confirm.style.display = 'block';
     diceButton.style.display = 'none';
@@ -89,13 +90,17 @@ const leftTextContent = index => {
 
   //display the new content
   cardsTextArray[index].style.display = 'flex';
+
+  //change the card text to the text for neutral frame
+  if (index === 0) {
+    cardsTextArray[index].textContent = 'So far so good.';
+  }
 };
 
 //Confirm Button for the trap or boost card
 confirm.addEventListener('click', () => {
   changeFrame(valueStep, direction);
   confirm.style.display = 'none';
-  leftTextContent(0);
 });
 
 //Dice button
