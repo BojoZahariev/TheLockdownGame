@@ -46,12 +46,12 @@
 
 .good {
   background-color: #a1ef8b;
-  border: 2px solid #d81159;
+  border: 2px solid #2660a4;
 }
 
 .bad {
   background-color: #d81159;
-  border: 2px solid #a1ef8b;
+  border: 2px solid #2660a4;
 }
 
 #initialText {
