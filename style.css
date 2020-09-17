@@ -243,11 +243,10 @@
   transform-style: preserve-3d;
 }
 
-#diceButton,
-#confirm {
+.button {
   display: block;
   width: 100px;
-  padding: 10px 30px;
+  padding: 10px 0px;
   cursor: pointer;
   margin: 10px auto;
   border: 2px solid #2660a4;
