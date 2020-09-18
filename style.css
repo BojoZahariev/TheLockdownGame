@@ -291,13 +291,18 @@
 /*MEDIA*/
 
 @media only screen and (max-width: 768px) {
+  .title {
+    margin: 20px 0px;
+    font-size: 40px;
+  }
+
   #leftText {
     left: 0;
-    width: 120px;
+    width: 33vw;
   }
 
   .cardText {
-    padding: 10px;
+    padding: 5px;
     font-size: 16px;
     min-height: 200px;
   }
@@ -312,12 +317,12 @@
 
   #diceDiv {
     right: 0;
-    width: 100px;
+    width: 120px;
   }
 
   .dice-wrapper {
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
   }
 
   .box {
