@@ -293,7 +293,13 @@
 @media only screen and (max-width: 768px) {
   #leftText {
     left: 0;
-    width: 200px;
+    width: 120px;
+  }
+
+  .cardText {
+    padding: 10px;
+    font-size: 16px;
+    min-height: 200px;
   }
 
   #containerFrames {
@@ -306,6 +312,15 @@
 
   #diceDiv {
     right: 0;
-    width: 200px;
+    width: 100px;
+  }
+
+  .dice-wrapper {
+    height: 80px;
+    width: 80px;
+  }
+
+  .box {
+    width: 70px;
   }
 }
