@@ -20,16 +20,13 @@ const changeFrame = (step, move) => {
     //move to the final div if the roll is more than the length
     if (!framesArray[framesArray.indexOf(box.parentElement) + step]) {
       framesArray[framesArray.length - 1].appendChild(box);
-      /*
-      //load the final text
-      let cardsTextArray = Array.from(cardTexts);
-      leftTextContent(cardsTextArray.indexOf(cardsTextArray[cardsTextArray.length - 1]));
-      */
     } else {
       framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
     }
   } else {
     framesArray[framesArray.indexOf(box.parentElement) - step].appendChild(box);
+    //change the emoji to the one with the mask
+    box.src = 'images/emojiMask2.png';
   }
 
   //hide the button until the next roll
@@ -56,14 +53,17 @@ const changeFrame = (step, move) => {
   //scroll the parent frame in focus after certain time
   setTimeout(
     function() {
-      framesControl(Number(trapValue), box.parentElement);
-
       framesArray[framesArray.indexOf(box.parentElement)].scrollIntoView({
         behavior: 'smooth'
       });
     },
     direction === 'forward' ? forwardTime : backTime
   );
+
+  //check the new frame parent
+  setTimeout(function() {
+    framesControl(Number(trapValue), box.parentElement);
+  }, 4000);
 };
 
 const framesControl = (boxValue, frame) => {
@@ -122,6 +122,9 @@ confirm.addEventListener('click', () => {
 diceButton.addEventListener('click', () => {
   direction = 'forward';
   changeFrame(rollDice(), direction);
+
+  //change the emoji back to normal
+  box.src = 'images/emojiSmile.png';
 });
 
 const addDots = (element, number) => {
