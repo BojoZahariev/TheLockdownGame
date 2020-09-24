@@ -30,6 +30,7 @@
   width: 200px;
   text-align: center;
   font-family: 'Grandstander', cursive;
+  z-index: 999;
 }
 
 .cardText {
@@ -66,7 +67,6 @@
   position: relative;
   left: 0;
   right: 0;
-
   margin: auto;
 }
 
@@ -116,6 +116,7 @@
   right: calc(100vw / 2 - 400px);
   width: 200px;
   text-align: center;
+  z-index: 999;
 }
 
 .dice-wrapper {
@@ -289,6 +290,15 @@
   left: 0;
   width: 100px;
   padding: 10px;
+}
+
+canvas {
+  position: fixed;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  top: 0;
 }
 
 /*MEDIA*/
