@@ -5,6 +5,7 @@ const diceDiv = document.querySelector('#diceDiv');
 const diceButton = document.querySelector('#diceButton');
 const leftText = document.querySelector('#leftText');
 const confirm = document.querySelector('#confirm');
+const playAgain = document.querySelector('#playAgain');
 
 //Global variables so it's not messing the event listener for the confirm button
 let valueStep;
@@ -17,12 +18,15 @@ const changeFrame = (step, move) => {
 
   //move the player
   if (move === 'forward') {
-    //move to the final div if the roll is more than the length
+    //move to the final frame if the roll is more than the length
     if (!framesArray[framesArray.indexOf(box.parentElement) + step]) {
       framesArray[framesArray.length - 1].appendChild(box);
     } else {
       framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
     }
+    //move back to the first frame
+  } else if (move === 'start') {
+    framesArray[0].appendChild(box);
   } else {
     framesArray[framesArray.indexOf(box.parentElement) - step].appendChild(box);
     //change the emoji to the one with the mask
@@ -71,6 +75,8 @@ const framesControl = (boxValue, frame) => {
 
   //check if it's the final frame
   if (frame.classList.contains('final')) {
+    //play again
+    playAgain.style.display = 'block';
     leftTextContent(99);
     //checks if it's neutral frame
   } else if (boxValue === 0 && !frame.classList.contains('final')) {
@@ -105,6 +111,7 @@ const leftTextContent = index => {
     cardsTextArray[index].textContent = 'So far so good.';
     //load the final text
   } else if (index === 99) {
+    //display the last p
     cardsTextArray[cardsTextArray.indexOf(cardsTextArray[cardsTextArray.length - 1])].style.display = 'flex';
   } else {
     //display the new content
@@ -116,6 +123,15 @@ const leftTextContent = index => {
 confirm.addEventListener('click', () => {
   changeFrame(valueStep, direction);
   confirm.style.display = 'none';
+});
+
+//play again btn
+playAgain.addEventListener('click', () => {
+  leftTextContent(0);
+  changeFrame(0, 'start');
+
+  playAgain.style.display = 'none';
+  diceButton.style.display = 'block';
 });
 
 //Dice button

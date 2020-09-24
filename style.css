@@ -260,7 +260,8 @@
   transition: all 0.2s;
 }
 
-#confirm {
+#confirm,
+#playAgain {
   display: none;
   width: 130px;
 }
@@ -269,7 +270,8 @@
   width: 110px;
 }
 
-#confirm:hover {
+#confirm:hover,
+#playAgain:hover {
   width: 140px;
 }
 
