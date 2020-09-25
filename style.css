@@ -340,7 +340,8 @@ canvas {
 
   #confirm,
   #playAgain {
-    width: 100px;
+    width: 110px;
+    font-size: 18px;
   }
 
   .box {
@@ -349,5 +350,9 @@ canvas {
 
   .icons {
     width: 50px;
+  }
+
+  .coronaMainImg {
+    width: 80px;
   }
 }
