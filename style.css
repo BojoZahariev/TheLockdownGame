@@ -338,6 +338,11 @@ canvas {
     width: 100px;
   }
 
+  #confirm,
+  #playAgain {
+    width: 100px;
+  }
+
   .box {
     width: 70px;
   }
