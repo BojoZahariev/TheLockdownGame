@@ -25,11 +25,9 @@ const changeFrame = (step, move) => {
     } else {
       framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
     }
-    //move back to the first frame
-    /*
+    //move back to the first frame for moz
   } else if (move === 'start') {
     framesArray[0].appendChild(box);
-    */
   } else {
     framesArray[framesArray.indexOf(box.parentElement) - step].appendChild(box);
     //change the emoji to the one with the mask
@@ -132,14 +130,13 @@ confirm.addEventListener('click', () => {
 
 //play again btn
 playAgain.addEventListener('click', () => {
-  /*
+  //scroll back to top for moz.
   leftTextContent(0);
   changeFrame(0, 'start');
 
   playAgain.style.display = 'none';
   diceButton.style.display = 'block';
-  confetti(false);
-  */
+
   window.location.reload();
 });
 
