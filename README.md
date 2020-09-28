@@ -4,4 +4,6 @@
 
 ## Tools: JAVASCRIPT, HTML, CSS, TweenMax
 
-![Image of The Lockdown game]()
+![Image of The Lockdown game](https://github.com/BojoZahariev/TheLockdownGame/blob/master/images/Capture1.PNG)
+
+![Image of The Lockdown game](https://github.com/BojoZahariev/TheLockdownGame/blob/master/images/Capture2.PNG)
