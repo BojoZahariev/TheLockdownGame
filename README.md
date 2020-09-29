@@ -7,3 +7,5 @@
 ![Image of The Lockdown game](https://github.com/BojoZahariev/TheLockdownGame/blob/master/images/Capture1.PNG)
 
 ![Image of The Lockdown game](https://github.com/BojoZahariev/TheLockdownGame/blob/master/images/Capture2.PNG)
+
+![Image of The Lockdown game](https://github.com/BojoZahariev/TheLockdownGame/blob/master/images/Capture3.PNG)
