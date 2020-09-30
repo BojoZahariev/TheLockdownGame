@@ -130,14 +130,17 @@ confirm.addEventListener('click', () => {
 
 //play again btn
 playAgain.addEventListener('click', () => {
-  //scroll back to top for moz.
+  //scroll back to top
   leftTextContent(0);
   changeFrame(0, 'start');
 
   playAgain.style.display = 'none';
   diceButton.style.display = 'block';
 
-  window.location.reload();
+  //kill the confetti
+  setTimeout(function() {
+    window.location.reload();
+  }, 5000);
 });
 
 //Dice button
