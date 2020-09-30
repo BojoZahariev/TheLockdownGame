@@ -25,7 +25,7 @@ const changeFrame = (step, move) => {
     } else {
       framesArray[framesArray.indexOf(box.parentElement) + step].appendChild(box);
     }
-    //move back to the first frame for moz
+    //move back to the first frame
   } else if (move === 'start') {
     framesArray[0].appendChild(box);
   } else {
@@ -136,11 +136,6 @@ playAgain.addEventListener('click', () => {
 
   playAgain.style.display = 'none';
   diceButton.style.display = 'block';
-
-  //kill the confetti
-  setTimeout(function() {
-    window.location.reload();
-  }, 5000);
 });
 
 //Dice button
@@ -222,7 +217,7 @@ const confetti = () => {
   let H = window.innerHeight;
   const canvas = document.getElementById('canvas');
   const context = canvas.getContext('2d');
-  const maxConfettis = 150;
+  const maxConfettis = 250;
   const particles = [];
 
   const possibleColors = [
@@ -287,14 +282,6 @@ const confetti = () => {
       particle.tilt = Math.sin(particle.tiltAngle - i / 3) * 15;
 
       if (particle.y <= H) remainingFlakes++;
-
-      // If a confetti has fluttered out of view,
-      // bring it back to above the viewport and let if re-fall.
-      if (particle.x > W + 30 || particle.x < -30 || particle.y > H) {
-        particle.x = Math.random() * W;
-        particle.y = -30;
-        particle.tilt = Math.floor(Math.random() * 10) - 20;
-      }
     }
 
     return results;
