@@ -23,6 +23,7 @@
   font-size: 50px;
 }
 
+/*Cards*/
 #leftText {
   position: fixed;
   top: calc(100vh / 2 - 100px);
@@ -60,6 +61,7 @@
   text-align: center;
 }
 
+/*Play field*/
 #containerFrames {
   width: 150px;
   display: flex;
@@ -292,6 +294,7 @@
   padding: 10px;
 }
 
+/*Confetti canvas*/
 canvas {
   position: fixed;
   overflow-y: hidden;
